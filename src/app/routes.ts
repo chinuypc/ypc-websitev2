@@ -1,16 +1,18 @@
 import { createHashRouter } from "react-router";
 import { RootLayout } from "./components/RootLayout";
-import HomePage from "./pages/HomePage";
-import WaitlistPage from "./pages/WaitlistPage";
-import BrochurePage from "./pages/BrochurePage";
-import ReferralPage from "./pages/ReferralPage";
-import AboutPage from "./pages/AboutPage";
-import AuditReportPage from "./pages/AuditReportPage";
-import AuditFinalPage from "./pages/AuditFinalPage";
-import FAQPage from "./pages/FAQPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
-import CookiesPolicyPage from "./pages/CookiesPolicyPage";
+import { lazy } from "react";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const WaitlistPage = lazy(() => import("./pages/WaitlistPage"));
+const BrochurePage = lazy(() => import("./pages/BrochurePage"));
+const ReferralPage = lazy(() => import("./pages/ReferralPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const AuditReportPage = lazy(() => import("./pages/AuditReportPage"));
+const AuditFinalPage = lazy(() => import("./pages/AuditFinalPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
+const CookiesPolicyPage = lazy(() => import("./pages/CookiesPolicyPage"));
 
 export const router = createHashRouter([
   {

@@ -49,7 +49,7 @@ export function HeroSection() {
         className="hidden lg:block absolute right-16 top-[280px] w-px h-[160px] bg-gradient-to-b from-transparent via-[rgba(129,106,84,0.3)] to-transparent origin-top"
       />
 
-      <div className="relative max-w-[800px] mx-auto px-5 sm:px-6 text-center pt-24 md:pt-[140px]">
+      <div className="relative max-w-[960px] mx-auto px-5 sm:px-6 text-center pt-24 md:pt-[140px]">
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -71,16 +71,17 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-['Cormorant_Garamond',serif] font-light text-[30px] sm:text-[52px] md:text-[80px] lg:text-[88px] leading-[1.08] md:leading-[1.05] tracking-[-0.5px] md:tracking-[-1px] text-[#fcfcfc] whitespace-nowrap"
+            className="font-['Cormorant_Garamond',serif] font-light text-[clamp(24px,5vw,56px)] leading-[1.15] tracking-[-0.5px] md:tracking-[-1px] text-[#fcfcfc] text-center"
           >
-            <span className="block">The Operating System</span>
+            <span className="block whitespace-nowrap">The Operating System</span>
+            <span className="block whitespace-nowrap">for Founders Who Are</span>
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="block italic text-[#A08567]"
+              className="block whitespace-nowrap italic text-[#A08567]"
             >
-              for Serious Founders.
+              Serious About What Comes Next.
             </motion.span>
           </motion.h1>
         </div>
@@ -93,13 +94,16 @@ export function HeroSection() {
           className="font-['Inter',sans-serif] font-light text-[14px] md:text-[15px] leading-[22px] md:leading-[24px] text-[#d4d4d4] max-w-[500px] mx-auto mb-7 md:mb-10"
         >
           <span className="hidden sm:inline">
-            A private, application-only club in Dubai for founders scaling AED
-            1M–30M. Over $12M in deals facilitated. 48+ private events yearly.
-            Powered by PioneerOS.
+            YP Club is a private, application-only members club in Dubai for
+            founders scaling from AED 1M to AED 30M. Over $12M in deals
+            facilitated. 48+ private events yearly. Powered by PioneerOS — the
+            infrastructure, network, and knowledge to scale your business and
+            get in the rooms that change your trajectory.
           </span>
           <span className="sm:hidden">
-            Application-only club for Dubai founders scaling AED 1M–30M. $12M+
-            in deals. 48+ events yearly.
+            A private, application-only members club in Dubai for founders
+            scaling from AED 1M to AED 30M. Over $12M in deals. 48+ events
+            yearly. Powered by PioneerOS.
           </span>
         </motion.p>
 

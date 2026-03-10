@@ -3,7 +3,7 @@ import { router } from "./routes";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#1a1414] text-[#fcfcfc] overflow-x-hidden">
+    <div className="min-h-screen bg-[#1a1414] text-[#fcfcfc] [overflow-x:clip]">
       <RouterProvider router={router} />
     </div>
   );

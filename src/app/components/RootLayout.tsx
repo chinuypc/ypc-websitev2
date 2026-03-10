@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import { ScrollToTop } from "./ScrollToTop";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 
 export function RootLayout() {
   // Set document language for accessibility
@@ -40,7 +40,9 @@ export function RootLayout() {
       >
         Skip to main content
       </a>
-      <Outlet />
+      <Suspense fallback={<div className="min-h-screen bg-[#1a1414]" />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 }

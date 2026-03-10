@@ -1,196 +1,151 @@
-import { ScrollReveal } from "./ScrollReveal";
-import { motion, useReducedMotion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
-import phoneScreen from "@/assets/platform-phone.png";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 const features = [
   {
     title: "Impact Index",
     desc: "See the financial value your network is generating in real time. Every introduction, referral, and deal tracked and attributed to your profile.",
+    color: "#1e4d57",
   },
   {
     title: "Curated Dinners",
     desc: "AI-matched gatherings based on your industry, ambitions, and who you need to meet. Seating confirmed two days in advance.",
+    color: "#816a54",
   },
   {
     title: "The Vault",
     desc: "On-demand access to a private library of founder-focused education built around the six pillars of scale.",
+    color: "#2d4a3e",
   },
   {
     title: "YP Concierge",
     desc: "24/7 travel desk with up to 50% off Emirates and Etihad business class, luxury hotel upgrades, and VIP arrival treatment.",
-  },
-  {
-    title: "YP Nodes",
-    desc: "Our members travel frequently so their network should follow them. Pop-up activations and curated introductions globally and at conferences.",
+    color: "#4a3a5c",
   },
 ];
 
-const VISIBLE_COUNT = 3;
-const SCROLL_SPEED = 30; // px per second
-
-function InfiniteFeatureScroll() {
-  const prefersReducedMotion = useReducedMotion();
-  const [offset, setOffset] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [measured, setMeasured] = useState(false);
-  const [itemHeights, setItemHeights] = useState<number[]>([]);
-  const rafRef = useRef<number>(0);
-  const lastTimeRef = useRef<number>(0);
-  const innerRef = useRef<HTMLDivElement>(null);
-
-  // Measure actual rendered item heights after first paint
-  useEffect(() => {
-    if (!innerRef.current || measured) return;
-    const items = innerRef.current.querySelectorAll<HTMLElement>("[data-feature-item]");
-    if (items.length === 0) return;
-    // Only measure the first set (not the duplicates)
-    const heights: number[] = [];
-    for (let i = 0; i < features.length && i < items.length; i++) {
-      heights.push(items[i].getBoundingClientRect().height);
-    }
-    setItemHeights(heights);
-    setMeasured(true);
-  }, [measured]);
-
-  // Recalculate on resize
-  useEffect(() => {
-    const onResize = () => setMeasured(false);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  const totalHeight = itemHeights.reduce((sum, h) => sum + h, 0);
-  const visibleHeight =
-    itemHeights.length >= VISIBLE_COUNT
-      ? itemHeights.slice(0, VISIBLE_COUNT).reduce((sum, h) => sum + h, 0)
-      : 400; // fallback before measurement
-
-  useEffect(() => {
-    if (prefersReducedMotion || isPaused || !measured || totalHeight === 0) return;
-
-    const tick = (time: number) => {
-      if (lastTimeRef.current) {
-        const delta = (time - lastTimeRef.current) / 1000;
-        setOffset((prev) => {
-          const next = prev + SCROLL_SPEED * delta;
-          return next >= totalHeight ? next - totalHeight : next;
-        });
-      }
-      lastTimeRef.current = time;
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      cancelAnimationFrame(rafRef.current);
-      lastTimeRef.current = 0;
-    };
-  }, [prefersReducedMotion, isPaused, measured, totalHeight]);
-
-  // Double the list for seamless wrapping
-  const doubled = [...features, ...features];
-
-  return (
-    <div
-      className="relative overflow-hidden max-w-[660px]"
-      style={{ height: measured ? visibleHeight : "auto" }}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
-      onFocus={() => setIsPaused(true)}
-      onBlur={() => setIsPaused(false)}
-      role="list"
-      aria-label="Platform features"
-    >
-      {/* Top fade */}
-      <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#1a1414] to-transparent z-10 pointer-events-none" />
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#1a1414] to-transparent z-10 pointer-events-none" />
-
-      <div
-        ref={innerRef}
-        style={{
-          transform: measured ? `translateY(-${offset}px)` : undefined,
-          willChange: measured ? "transform" : undefined,
-        }}
-      >
-        {doubled.map((feature, i) => (
-          <div
-            key={`${feature.title}-${i}`}
-            data-feature-item
-            className="border-b border-[rgba(255,255,255,0.1)] py-5 sm:py-6"
-            role="listitem"
-          >
-            <div className="flex items-start gap-3 sm:gap-4">
-              <div className="w-1.5 h-1.5 rounded-sm bg-[#816a54] mt-1.5 shrink-0" />
-              <div className="min-w-0">
-                <p className="font-['Inter',sans-serif] font-semibold text-[12px] leading-[18px] tracking-[1.65px] uppercase text-[#fcfcfc] mb-1.5">
-                  {feature.title}
-                </p>
-                <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc]">
-                  {feature.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+// Placeholder images — replace with real ones later
+const placeholderImages = features.map(
+  (f, i) =>
+    `data:image/svg+xml,${encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="375" height="812" viewBox="0 0 375 812">
+        <rect width="375" height="812" fill="${f.color}" rx="32"/>
+        <text x="187" y="380" text-anchor="middle" fill="white" font-family="sans-serif" font-size="24" font-weight="300" opacity="0.6">${f.title}</text>
+        <text x="187" y="420" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14" opacity="0.4">Sample Image ${i + 1}</text>
+      </svg>`
+    )}`
+);
 
 export function PlatformSection() {
+  const outerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    if (!outerRef.current) return;
+    const rect = outerRef.current.getBoundingClientRect();
+    const sectionHeight = outerRef.current.offsetHeight;
+    const viewportH = window.innerHeight;
+
+    const scrollableDistance = sectionHeight - viewportH;
+    if (scrollableDistance <= 0) return;
+
+    const scrolled = -rect.top;
+    const progress = Math.max(0, Math.min(1, scrolled / scrollableDistance));
+
+    const index = Math.min(
+      features.length - 1,
+      Math.floor(progress * features.length)
+    );
+    setActiveIndex(index);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
   return (
-    <section className="py-16 md:py-24 px-6" aria-labelledby="platform-heading">
-      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
-        {/* Left content */}
-        <div className="flex-1">
-          <ScrollReveal direction="up">
-            <p className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] tracking-[3px] uppercase text-[#A08567] mb-5">
-              The Platform
-            </p>
-          </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.1}>
-            <div className="mb-8">
-              <h2 id="platform-heading" className="font-['Cormorant_Garamond',serif] font-light text-[28px] sm:text-[36px] md:text-[48px] leading-[1.1] text-[#fcfcfc]">
+    // Outer container: tall enough to create scroll room (100vh per feature)
+    <div
+      ref={outerRef}
+      style={{ height: `${features.length * 100}vh` }}
+      className="relative"
+    >
+      {/* Sticky inner — locks to viewport. NO transforms allowed here or in children. */}
+      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center py-12 md:py-16">
+        <section className="w-full px-6" aria-labelledby="platform-heading">
+          <div className="max-w-[1200px] mx-auto">
+            {/* Header — no ScrollReveal (transforms break sticky) */}
+            <div className="mb-6 md:mb-10">
+              <p className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] tracking-[3px] uppercase text-[#A08567] mb-4">
+                The Platform
+              </p>
+              <h2
+                id="platform-heading"
+                className="font-['Cormorant_Garamond',serif] font-light text-[28px] sm:text-[36px] md:text-[48px] leading-[1.1] text-[#fcfcfc] mb-4"
+              >
                 One Platform.
                 <span className="block italic text-[#A08567]">
                   Every Tool You Need to Scale.
                 </span>
               </h2>
+              <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] max-w-[560px]">
+                The PioneerOS is the digital infrastructure behind your
+                membership, built to manage your network, track your impact,
+                and give you access to everything YP Club offers in one place.
+              </p>
             </div>
-          </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.15}>
-            <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] max-w-[560px] mb-10">
-              The PioneerOS is the digital infrastructure behind your membership, built to manage your network, track your impact, and give you access to everything YP Club offers in one place.
-            </p>
-          </ScrollReveal>
 
-          {/* Infinite scrolling feature list */}
-          <ScrollReveal direction="up" delay={0.2}>
-            <InfiniteFeatureScroll />
-          </ScrollReveal>
-        </div>
+            {/* Content: features list + phone image */}
+            <div className="flex gap-12 lg:gap-20 items-center">
+              {/* Left — all features visible, active one highlighted */}
+              <div className="flex-1">
+                {features.map((feature, i) => (
+                  <div
+                    key={feature.title}
+                    className="py-5 md:py-6 border-l-2 pl-5 md:pl-6 transition-all duration-500"
+                    style={{
+                      borderColor:
+                        activeIndex === i
+                          ? "#A08567"
+                          : "rgba(255,255,255,0.08)",
+                      opacity: activeIndex === i ? 1 : 0.3,
+                    }}
+                  >
+                    <p className="font-['Inter',sans-serif] font-semibold text-[13px] leading-[18px] tracking-[2px] uppercase text-[#fcfcfc] mb-2">
+                      {feature.title}
+                    </p>
+                    <p
+                      className="font-['Inter',sans-serif] font-light text-[14px] md:text-[15px] leading-[24px] text-[#d4d4d4] max-w-[460px] overflow-hidden transition-all duration-500"
+                      style={{
+                        maxHeight: activeIndex === i ? "120px" : "0px",
+                        opacity: activeIndex === i ? 1 : 0,
+                        marginTop: activeIndex === i ? "4px" : "0px",
+                      }}
+                    >
+                      {feature.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
-        {/* Right phone mockup */}
-        <ScrollReveal direction="right" delay={0.3} className="hidden lg:block w-[440px] shrink-0">
-          <motion.div
-            initial={{ y: 40 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-            className="w-[375px] mx-auto rounded-[32px] overflow-hidden border border-[rgba(255,255,255,0.1)]"
-          >
-            <img
-              src={phoneScreen}
-              alt="PioneerOS member profile with Club Impact stats"
-              className="block w-full h-auto"
-            />
-          </motion.div>
-        </ScrollReveal>
+              {/* Right — phone with crossfading images */}
+              <div className="hidden lg:flex w-[340px] shrink-0 items-center justify-center">
+                <div className="relative w-[280px] h-[600px] rounded-[32px] overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#1a1414]">
+                  {placeholderImages.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`${features[i].title} screen`}
+                      className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+                      style={{ opacity: activeIndex === i ? 1 : 0 }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
   );
 }
