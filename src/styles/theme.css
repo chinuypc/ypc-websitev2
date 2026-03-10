@@ -1,0 +1,166 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #1a1414;
+  --foreground: #fcfcfc;
+  --card: #211919;
+  --card-foreground: #fcfcfc;
+  --popover: #211919;
+  --popover-foreground: #fcfcfc;
+  --primary: #1e4d57;
+  --primary-foreground: #ffffff;
+  --secondary: #816a54;
+  --secondary-foreground: #fcfcfc;
+  --muted: #2a2020;
+  --muted-foreground: #6e6260;
+  --accent: #2a6b78;
+  --accent-foreground: #fcfcfc;
+  --destructive: #9b0003;
+  --destructive-foreground: #ffffff;
+  --border: rgba(252, 252, 252, 0.08);
+  --input: transparent;
+  --input-background: #211919;
+  --switch-background: #4f4f4f;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: rgba(30, 77, 87, 0.4);
+  --chart-1: #1e4d57;
+  --chart-2: #816a54;
+  --chart-3: #2a6b78;
+  --chart-4: #b8afa8;
+  --chart-5: #6e6260;
+  --radius: 0.5rem;
+  --sidebar: #1a1414;
+  --sidebar-foreground: #fcfcfc;
+  --sidebar-primary: #1e4d57;
+  --sidebar-primary-foreground: #fcfcfc;
+  --sidebar-accent: #211919;
+  --sidebar-accent-foreground: #fcfcfc;
+  --sidebar-border: rgba(252, 252, 252, 0.08);
+  --sidebar-ring: rgba(30, 77, 87, 0.4);
+
+  /* Design system colors */
+  --color-pure-white: #fcfcfc;
+  --color-light-grey: #dddddd;
+  --color-grey: #8d8d8d;
+  --color-dark-grey: #767676;
+  --color-deep-black: #1a1414;
+  --color-soft-beige: #f8f2ec;
+  --color-teal: #1e4d57;
+  --color-teal-light: #2a6b78;
+  --color-sandy: #816a54;
+  --color-error: #9b0003;
+  --color-success: #02a73c;
+  --color-text-muted: #b8afa8;
+  --color-text-subtle: #6e6260;
+  --color-card-bg: #211919;
+  --color-card-dark: #1a1414;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+  }
+
+  h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+  }
+
+  label {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  button {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 1.65px;
+    text-transform: uppercase;
+  }
+
+  input {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
