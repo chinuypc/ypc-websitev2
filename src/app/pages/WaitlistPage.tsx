@@ -5,6 +5,7 @@ import { SubPageNav, PageFooter, QuoteSection } from "../components/PageLayout";
 import svgPaths from "../../imports/svg-c6t0uk55w3";
 import videoThumb from "figma:asset/a2b742535de03f1c1c437bf3e7386d96e05c6a3c.png";
 import { SEOHead, breadcrumbSchema } from "../components/SEOHead";
+import waitlistHeroImg from "../../assets/waitlist-hero.jpg";
 
 const processSteps = [
   {
@@ -68,14 +69,20 @@ export default function WaitlistPage() {
       <main id="main-content">
       {/* Hero */}
       <section
-        className="relative py-16 md:py-24 px-6 overflow-hidden"
+        className="relative py-20 md:py-28 px-6 overflow-hidden"
         aria-labelledby="waitlist-heading"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 0%, rgba(30,77,87,0.12) 0%, transparent 60%), linear-gradient(90deg, #1a1414, #1a1414)",
-        }}
       >
-        <div className="max-w-[860px] mx-auto text-center">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src={waitlistHeroImg}
+            alt=""
+            className="absolute inset-0 size-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(26,20,20,0.7)] via-[rgba(26,20,20,0.82)] to-[#1a1414]" />
+        </div>
+
+        <div className="relative z-10 max-w-[860px] mx-auto text-center">
           <ScrollReveal direction="up">
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-8 h-px bg-[#816a54]" />

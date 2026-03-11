@@ -12,11 +12,14 @@ import {
   ThankYouState,
 } from "../components/FormComponents";
 import { SEOHead, breadcrumbSchema } from "../components/SEOHead";
+import heroImg from "../../assets/brochure-hero.jpg";
+
+import speakersImg from "../../assets/brochure-speakers.jpg";
 
 const whatsInside = [
   {
     title: "The PioneerOS",
-    desc: "Every feature of the platform \u2014 Impact Index, Curated Dinners, The Vault, YP Concierge \u2014 explained in full.",
+    desc: "Every feature of the platform, Impact Index, Curated Dinners, The Vault, YP Concierge, explained in full.",
   },
   {
     title: "Member Results",
@@ -128,33 +131,54 @@ export default function BrochurePage() {
       <SubPageNav />
 
       <main id="main-content">
-      {/* Hero */}
-      <section className="py-16 md:py-24 px-6 text-center" aria-labelledby="brochure-heading">
-        <ScrollReveal direction="up">
-          <h1 id="brochure-heading" className="font-['Cormorant_Garamond',serif] font-light text-[36px] sm:text-[44px] md:text-[56px] leading-[1.06] tracking-[-0.72px] text-[#fcfcfc]">
-            Everything You Need to Know.
-            <span className="block italic text-[#A08567]">
-              In One Document.
-            </span>
-          </h1>
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] max-w-[555px] mx-auto mt-6">
-            The full YP Club playbook \u2014 our membership model, the PioneerOS,
-            member results, and what the next 12 months looks like for founders
-            inside the network.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.15}>
-          <p className="font-['Cormorant_Garamond',serif] italic font-light text-[16px] leading-[24px] text-[#A08567] max-w-[700px] mx-auto mt-4">
-            Submit your details and receive the brochure instantly. A member of
-            our team will follow up on WhatsApp within 24 hours.
-          </p>
-        </ScrollReveal>
+      {/* Hero with background image */}
+      <section className="relative py-20 md:py-32 px-6 text-center overflow-hidden" aria-labelledby="brochure-heading">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src={heroImg}
+            alt=""
+            className="absolute inset-0 size-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(26,20,20,0.75)] via-[rgba(26,20,20,0.85)] to-[#1a1414]" />
+        </div>
+
+        <div className="relative z-10">
+          <ScrollReveal direction="up">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-8 h-px bg-[#816a54]" />
+              <p className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] tracking-[3px] uppercase text-[#A08567]">
+                The Playbook
+              </p>
+              <div className="w-8 h-px bg-[#816a54]" />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.05}>
+            <h1 id="brochure-heading" className="font-['Cormorant_Garamond',serif] font-light text-[36px] sm:text-[44px] md:text-[56px] leading-[1.06] tracking-[-0.72px] text-[#fcfcfc]">
+              Everything You Need to Know.
+              <span className="block italic text-[#A08567]">
+                In One Document.
+              </span>
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.1}>
+            <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[rgba(252,252,252,0.9)] max-w-[555px] mx-auto mt-6">
+              The full YP Club playbook, our membership model, the PioneerOS,
+              member results, and what the next 12 months looks like for founders
+              inside the network.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.15}>
+            <p className="font-['Cormorant_Garamond',serif] italic font-light text-[16px] leading-[24px] text-[#A08567] max-w-[700px] mx-auto mt-4">
+              Submit your details and receive the brochure instantly. A member of
+              our team will follow up on WhatsApp within 24 hours.
+            </p>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* Form + Sidebar */}
-      <section className="px-6 pb-24 md:pb-32" aria-label="Brochure request form and details">
+      <section className="px-6 pb-16 md:pb-24" aria-label="Brochure request form and details">
         <div className="max-w-[1100px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16">
           {/* Form card */}
           <ScrollReveal direction="up" delay={0.1} className="flex-1 min-w-0">
@@ -264,7 +288,7 @@ export default function BrochurePage() {
                       <div className="flex items-center gap-2 mt-1">
                         <div className="size-[4px] rounded-[2px] bg-[#816a54]" />
                         <p className="font-['Inter',sans-serif] font-light text-[12px] leading-[18px] text-[#878787]">
-                          Our team will reach out here within 24 hours \u2014 one
+                          Our team will reach out here within 24 hours, one
                           conversation, no pressure.
                         </p>
                       </div>
@@ -293,6 +317,24 @@ export default function BrochurePage() {
 
           {/* Sidebar */}
           <div className="w-full lg:w-[420px] shrink-0 flex flex-col gap-8">
+            {/* Speakers image */}
+            <ScrollReveal direction="right" delay={0.15}>
+              <div className="relative overflow-hidden rounded-[4px] border border-[rgba(255,255,255,0.08)]">
+                <img
+                  src={speakersImg}
+                  alt="YP Club founders speaking at a private event"
+                  loading="lazy"
+                  className="w-full h-[200px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(26,20,20,0.6)] to-transparent" />
+                <div className="absolute bottom-4 left-5">
+                  <p className="font-['Cormorant_Garamond',serif] italic text-[14px] leading-[20px] text-[rgba(252,252,252,0.9)]">
+                    Inside the room that changes everything.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
             <ScrollReveal direction="right" delay={0.2}>
               <p className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] tracking-[3px] uppercase text-[#A08567] mb-4">
                 What's Inside
