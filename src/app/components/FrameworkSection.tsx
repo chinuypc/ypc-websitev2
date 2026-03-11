@@ -15,7 +15,7 @@ const pillars = [
   {
     num: "02",
     title: "Knowledge",
-    desc: "Access the tools, frameworks, and subject matter experts that move you from operator to global executive. Programming designed to sharpen the person running the company.",
+    desc: "Access the tools, frameworks, and subject matter experts that move you from operator to global leader. Programming designed to sharpen the person running the company.",
     image: knowledgeImg,
     imageAlt: "YP Club founder panel discussion on stage",
   },

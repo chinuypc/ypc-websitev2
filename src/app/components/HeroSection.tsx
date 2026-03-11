@@ -123,16 +123,14 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.9, ease }}
         >
           <span className="hidden sm:inline">
-            YP Club is a private, application-only members club in Dubai for
-            founders scaling from AED 1M to AED 30M. Over $12M in deals
-            facilitated. 48+ private events yearly. Powered by PioneerOS, the
-            infrastructure, network, and knowledge to scale your business and
-            get in the rooms that change your trajectory.
+            YP Club is a private, application-only founder community in Dubai.
+            Over $12M in deals facilitated. 48+ private events yearly. Powered
+            by PioneerOS, the infrastructure, network, and knowledge to scale
+            your business and get in the rooms that change your trajectory.
           </span>
           <span className="sm:hidden">
-            A private, application-only members club in Dubai for founders
-            scaling from AED 1M to AED 30M. Over $12M in deals. 48+ events
-            yearly. Powered by PioneerOS.
+            A private, application-only founder community in Dubai. Over $12M
+            in deals. 48+ events yearly. Powered by PioneerOS.
           </span>
         </motion.p>
 

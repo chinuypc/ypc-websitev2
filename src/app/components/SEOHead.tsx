@@ -122,7 +122,7 @@ export const organizationSchema = {
   "@type": "Organization",
   name: "YP Club",
   description:
-    "YP Club is a private, application-only members club for founders in Dubai scaling businesses from AED 1M to AED 30M. Founded in 2022, over $12M in deals facilitated, 48+ private events yearly, and 30+ industries represented.",
+    "YP Club is a private, application-only founder community in Dubai. Founded in 2022, over $12M in deals facilitated, 48+ private events yearly, and 30+ industries represented.",
   url: "https://ypclub.com",
   foundingDate: "2022",
   location: {
@@ -145,7 +145,7 @@ export const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "YP Club",
   description:
-    "Dubai's private members club for founders scaling from AED 1M to AED 30M. Over $12M in deals facilitated, 48+ private events yearly.",
+    "Dubai's private founder community. Over $12M in deals facilitated, 48+ private events yearly.",
   url: "https://ypclub.com",
   address: {
     "@type": "PostalAddress",
@@ -162,7 +162,7 @@ export const websiteSchema = {
   name: "YP Club",
   url: "https://ypclub.com",
   description:
-    "Dubai's private members club for founders scaling from AED 1M to AED 30M. Over $12M in deals facilitated, 48+ private events yearly, powered by PioneerOS.",
+    "Dubai's private founder community. Over $12M in deals facilitated, 48+ private events yearly, powered by PioneerOS.",
   potentialAction: {
     "@type": "SearchAction",
     target: "https://ypclub.com/?q={search_term_string}",

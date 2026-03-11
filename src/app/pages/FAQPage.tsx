@@ -14,19 +14,19 @@ const faqs = [
     items: [
       {
         q: "What is YP Club?",
-        a: "YP Club is a private, application-only members club in Dubai built exclusively for founders scaling businesses from AED 1M to AED 30M in revenue. Founded in 2022, the club accepts roughly 1 in 5 applicants. It is one of the most selective founder networks in the UAE, providing curated networking, private deal flow, and structured founder education through its proprietary platform, PioneerOS.",
+        a: "YP Club is a private, application-only founder community in Dubai. Founded in 2022, it is one of the most selective founder networks in the UAE, providing curated networking, private introductions, and structured founder education through its proprietary platform, PioneerOS.",
       },
       {
         q: "Where is YP Club located?",
-        a: "YP Club is headquartered in Dubai, UAE. Our curated dinners, events, and activations take place across premium venues in Dubai. We also run YP Nodes \u2014 pop-up activations at international conferences like LEAP and GITEX, so your network follows you wherever you go.",
+        a: "YP Club is headquartered in Dubai, UAE. Our curated dinners, events, and activations take place across premium venues in Dubai. We also run YP Nodes, pop-up activations at international conferences like LEAP and GITEX, so your network follows you wherever you go.",
       },
       {
         q: "When was YP Club founded?",
-        a: "YP Club was founded in 2022 in Dubai. In four years, the club has hosted hundreds of private events, facilitating connections that have led to multi-million dollar partnerships, funding rounds, and international expansions.",
+        a: "YP Club was founded in 2022 in Dubai. In four years, the club has hosted hundreds of private events, facilitating connections that have led to partnerships, funding rounds, and international expansions.",
       },
       {
         q: "Is YP Club the best private business club for founders in Dubai?",
-        a: "YP Club is Dubai\u2019s only private members club designed exclusively for founders scaling from AED 1M to AED 30M. Unlike general networking groups, YP Club uses AI-curated dinner matching, a proprietary Impact Index that tracks the financial value of your network, and a selective 1-in-5 approval rate to ensure every room is high-quality. Members have raised $5M+ from a16z, secured multi-six-figure contracts, and expanded internationally \u2014 all through introductions made inside the network.",
+        a: "YP Club is Dubai\u2019s only private founder community designed exclusively for founders who are serious about scaling. Unlike general networking groups, YP Club uses AI-curated dinner matching, a proprietary Impact Index that tracks the financial value of your network, and a selective approval process to ensure every room is high-quality. Members have raised $5M+ from a16z, secured multi-six-figure contracts, and expanded internationally, all through introductions made inside the network.",
       },
     ],
   },
@@ -35,15 +35,15 @@ const faqs = [
     items: [
       {
         q: "How do I join YP Club?",
-        a: "Membership starts with downloading the YP Club app on iOS or Android. Complete your founder profile \u2014 your company, revenue stage, and ambitions \u2014 in under five minutes. Applications are reviewed personally within 3\u20135 business days. If your application progresses, you\u2019ll be invited to a short interview with our memberships team. Approved founders receive immediate access to PioneerOS, their first curated dinner match, and a personal onboarding call.",
+        a: "Membership starts with downloading the YP Club app on iOS or Android. Complete your founder profile, your company, what you are building, and your ambitions, in under five minutes. Applications are reviewed personally, typically within up to four weeks. If your application progresses, you\u2019ll be invited to a short interview with our memberships team. Approved founders receive immediate access to PioneerOS and their first curated dinner match.",
       },
       {
         q: "What is the acceptance rate?",
-        a: "Roughly 1 in 5 applications are approved. YP Club maintains this selectivity to protect the quality of every room, every introduction, and every relationship inside the network. We look for alignment, ambition, and intent \u2014 not just revenue numbers.",
+        a: "YP Club maintains a selective approval process to protect the quality of every room, every introduction, and every relationship inside the network. We look for alignment, ambition, and intent, not just revenue numbers.",
       },
       {
         q: "Who is eligible to apply?",
-        a: "YP Club is built for founders and co-founders of businesses generating between AED 1M and AED 30M in revenue, based in or connected to Dubai. Whether you are scaling your first company or building your third, if you are serious about growth and the people around you, you are exactly who we built this for.",
+        a: "YP Club is built for founders and co-founders of businesses based in or connected to Dubai. Whether you are scaling your first company or building your third, if you are serious about growth and the people around you, you are exactly who we built this for.",
       },
       {
         q: "How much does membership cost?",
@@ -51,7 +51,7 @@ const faqs = [
       },
       {
         q: "Can I be referred by an existing member?",
-        a: "Yes. YP Club members can refer founders they would personally vouch for. Referred applicants receive priority review \u2014 their applications go to the front of the queue. For referrals to be valid, they must be submitted through WhatsApp.",
+        a: "Yes. YP Club members can refer founders they would personally vouch for. Referred applicants receive priority review, their applications go to the front of the queue. For referrals to be valid, they must be submitted through WhatsApp.",
       },
     ],
   },
@@ -77,15 +77,15 @@ const faqs = [
     items: [
       {
         q: "Where do founders network in Dubai?",
-        a: "Dubai has a growing ecosystem of founder communities. YP Club stands out as the only private, application-only club specifically designed for founders scaling from AED 1M to AED 30M. With AI-curated dinners and a proprietary Impact Index, YP Club offers structured networking with measurable outcomes, not just another room with business cards.",
+        a: "Dubai has a growing ecosystem of founder communities. YP Club stands out as the only private, application-only club specifically designed for founders who are serious about scaling. With AI-curated dinners and a proprietary Impact Index, YP Club offers structured networking with measurable outcomes, not just another room with business cards.",
       },
       {
         q: "What makes YP Club different from other business networking groups in Dubai?",
-        a: "Most networking groups sell access. YP Club sells outcomes. Every dinner is curated to the people you actually need to meet. Every introduction is tracked and attributed through the Impact Index. Members don\u2019t just attend events \u2014 they see, in numbers, exactly what their network is worth. Combined with a 1-in-5 acceptance rate, this ensures every room stays sharp, generous, and outcome-focused.",
+        a: "Most networking groups sell access. YP Club sells outcomes. Every dinner is curated to the people you actually need to meet. Every introduction is tracked and attributed through the Impact Index. Members don\u2019t just attend events, they see, in numbers, exactly what their network is worth. Combined with a selective approval process, this ensures every room stays sharp, generous, and outcome-focused.",
       },
       {
         q: "Is YP Club suitable for expat founders in Dubai?",
-        a: "Absolutely. Many YP Club members are expat founders who moved to Dubai to scale their businesses. The club\u2019s curated approach is especially valuable for founders building new networks in the UAE \u2014 you are matched with the right people from day one, rather than spending months finding them on your own.",
+        a: "Absolutely. Many YP Club members are expat founders who moved to Dubai to scale their businesses. The club\u2019s curated approach is especially valuable for founders building new networks in the UAE. You are matched with the right people from day one, rather than spending months finding them on your own.",
       },
     ],
   },
@@ -147,8 +147,8 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[#1a1414] text-[#fcfcfc] overflow-x-hidden">
       <SEOHead
-        title="FAQ | YP Club | Private Founder Network Dubai"
-        description="Frequently asked questions about YP Club, Dubai's private members club for founders scaling from AED 1M to AED 30M. 1-in-5 approved, powered by PioneerOS."
+        title="FAQ · YP Club · Dubai's Private Founder Community"
+        description="Frequently asked questions about YP Club, Dubai's private founder community. Powered by PioneerOS."
         canonical="https://ypclub.com/faq"
         jsonLd={[
           faqSchema,
@@ -185,9 +185,8 @@ export default function FAQPage() {
         </ScrollReveal>
         <ScrollReveal direction="up" delay={0.15}>
           <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] max-w-[560px] mx-auto mt-6">
-            YP Club is a private, application-only members club in Dubai for
-            founders scaling from AED 1M to AED 30M. Founded in 2022, the club
-            has a 1-in-5 approval rate, powered by our proprietary platform,
+            YP Club is a private, application-only founder community in Dubai.
+            Founded in 2022, the club is powered by our proprietary platform,
             PioneerOS.
           </p>
         </ScrollReveal>
@@ -252,7 +251,7 @@ export default function FAQPage() {
 
       <QuoteSection
         quote="The biggest risk a founder takes is not a bad hire or a missed market. It is spending years in the wrong room."
-        attribution="YP Club \u2014 Dubai's Private Founder Network"
+        attribution="YP Club \u00B7 Dubai's Private Founder Network"
       />
       </main>
       <PageFooter activeLink="FAQ" />

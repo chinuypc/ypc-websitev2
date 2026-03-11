@@ -2,7 +2,7 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "./ScrollReveal";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import imgBuiltFor from "figma:asset/9b5599e2f0b119efb1693627ede44449dc62ddbc.png";
 
-const tags = ["Founders", "Co-Founders", "AED 1M \u2013 30M Revenue", "Dubai Based"];
+const tags = ["Founders", "Co-Founders", "Scaling Businesses", "Dubai Based"];
 
 export function BuiltForSection() {
   return (

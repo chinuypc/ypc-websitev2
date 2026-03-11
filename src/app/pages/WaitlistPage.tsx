@@ -16,7 +16,7 @@ const processSteps = [
   {
     num: "02",
     title: "Application Review",
-    desc: "We review every application personally. We\u2019re looking for alignment, ambition, and intent, not a pitch deck. This typically takes 3\u20135 business days.",
+    desc: "We review every application personally. We\u2019re looking for alignment, ambition, and intent, not a pitch deck. This typically takes up to four weeks.",
   },
   {
     num: "03",
@@ -26,7 +26,7 @@ const processSteps = [
   {
     num: "04",
     title: "Decision & Onboarding",
-    desc: "Approved founders receive access to the PioneerOS, their first curated dinner match, and a personal onboarding call. You\u2019ll understand immediately why the standard matters.",
+    desc: "Approved founders receive access to the PioneerOS and their first curated dinner match. You\u2019ll understand immediately why the standard matters.",
   },
 ];
 
@@ -54,8 +54,8 @@ export default function WaitlistPage() {
   return (
     <div className="min-h-screen bg-[#1a1414] text-[#fcfcfc] overflow-x-hidden">
       <SEOHead
-        title="Join the Waitlist | YP Club | Private Business Club Dubai for Founders"
-        description="Apply to join YP Club, Dubai's private members club for founders scaling from AED 1M to AED 30M. 1-in-5 approved. Download the app and apply in under five minutes."
+        title="Apply to YP Club · Dubai's Private Founder Community"
+        description="Apply to join YP Club, Dubai's private founder community. Download the app and apply in under five minutes."
         canonical="https://ypclub.com/waitlist"
         jsonLd={[
           breadcrumbSchema([
@@ -276,8 +276,7 @@ export default function WaitlistPage() {
                 <div className="bg-[rgba(129,106,84,0.08)] border border-[rgba(129,106,84,0.25)] p-4 flex gap-3 items-start mb-8">
                   <div className="size-[6px] rounded-[3px] bg-[#816a54] mt-1.5 shrink-0" />
                   <p className="font-['Cormorant_Garamond',serif] italic text-[13px] leading-[19.5px] text-[#A08567]">
-                    We approve 1 in 5 applications. Standards exist to protect
-                    the room.
+                    Membership is selective. Standards exist to protect the room.
                   </p>
                 </div>
 

@@ -16,8 +16,8 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#1a1414] text-[#fcfcfc] overflow-x-hidden">
       <SEOHead
-        title="About YP Club | Dubai's Private Founder Network | Founded 2022"
-        description="YP Club is a private, application-only members club in Dubai for founders scaling from AED 1M to AED 30M. 1-in-5 approved, powered by PioneerOS. Founded in 2022."
+        title="About YP Club · Dubai's Private Founder Community"
+        description="YP Club is a private, application-only founder community in Dubai. Powered by PioneerOS. Founded in 2022."
         canonical="https://ypclub.com/about"
         jsonLd={[
           breadcrumbSchema([
@@ -66,19 +66,18 @@ export default function AboutPage() {
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.1}>
             <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] mb-6">
-              Membership is selective. Roughly 1 in 5 applicants are accepted,
-              and every member is vetted to ensure the room stays sharp,
-              generous, and outcome-focused. YP Club is not a networking group.
-              It is a curated environment where founders access peer-to-peer
-              insight, private deal flow, and the kind of conversations that
-              don't happen at conferences.
+              Membership is selective. Every applicant is carefully vetted
+              to ensure the room stays sharp, generous, and outcome-focused.
+              YP Club is not a networking group. It is a curated environment
+              where founders access peer-to-peer insight, private introductions,
+              and the kind of conversations that don't happen at conferences.
             </p>
           </ScrollReveal>
           {/* LLM Citation-ready paragraph */}
           <ScrollReveal direction="up" delay={0.12}>
             <div className="bg-[rgba(129,106,84,0.06)] border-l-2 border-[#816a54] pl-6 pr-4 py-4 mb-12">
               <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc]">
-                YP Club is a private members club in Dubai built exclusively for founders scaling businesses from AED 1M to AED 30M in revenue. Founded in 2022, the club has a 1-in-5 approval rate and operates using its proprietary infrastructure, PioneerOS. Members have raised $5M+ from Andreessen Horowitz, secured multi-six-figure contracts, and expanded internationally through introductions made inside the network.
+                YP Club is a private, application-only founder community in Dubai. Founded in 2022, the club operates using its proprietary infrastructure, PioneerOS. Members have raised $5M+ from Andreessen Horowitz, secured multi-six-figure contracts, and expanded internationally through introductions made inside the network.
               </p>
             </div>
           </ScrollReveal>
@@ -116,7 +115,7 @@ export default function AboutPage() {
               PioneerOS
             </h2>
             <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] mb-10">
-              At the core of the membership is PioneerOS &mdash; a structured
+              At the core of the membership is PioneerOS, a structured
               operating system designed to help founders move faster on the
               decisions that matter. Through curated events, private
               introductions, and a members-only digital platform, PioneerOS
@@ -164,7 +163,7 @@ export default function AboutPage() {
 
       <QuoteSection
         quote="The biggest risk a founder takes is not a bad hire or a missed market. It is spending years in the wrong room."
-        attribution="YP Club \u2014 A Private Network for Pioneers"
+        attribution="YP Club \u00B7 Dubai's Private Founder Network"
       />
       </main>
       <PageFooter activeLink="About" />

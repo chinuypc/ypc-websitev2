@@ -17,19 +17,19 @@ const steps = [
   {
     num: "01",
     title: "Download the App",
-    desc: "Your application starts in the YP Club app. Complete your founder profile, your company, your revenue stage, your ambitions. Takes under five minutes.",
+    desc: "Your application starts in the YP Club app. Complete your founder profile, your company, what you are building, your ambitions. Takes under five minutes.",
     badge: null,
   },
   {
     num: "02",
     title: "Priority Review",
     desc: "Your application is reviewed ahead of the standard queue. We\u2019re looking for alignment, ambition, and intent. Because you\u2019ve been referred, we already have a strong signal.",
-    badge: "Referred \u2014 ahead of queue",
+    badge: "Referred, ahead of queue",
   },
   {
     num: "03",
     title: "Interview & Decision",
-    desc: "A short conversation with our memberships team. If approved, you receive immediate access to the PioneerOS, your first curated dinner match, and a personal onboarding call.",
+    desc: "A short conversation with our memberships team. If approved, you receive immediate access to the PioneerOS and your first curated dinner match.",
     badge: null,
   },
 ];
@@ -75,8 +75,8 @@ export default function ReferralPage() {
   return (
     <div className="min-h-screen bg-[#1a1414] text-[#fcfcfc] overflow-x-hidden">
       <SEOHead
-        title="You've Been Referred | YP Club | Exclusive Founder Network Dubai"
-        description="A YP Club member has invited you. Apply with priority review to join Dubai's private members club for founders scaling AED 1M-30M. 1-in-5 approved."
+        title="Refer a Founder · YP Club Dubai"
+        description="A YP Club member has invited you. Apply with priority review to join Dubai's private founder community."
         canonical="https://ypclub.com/referral"
         jsonLd={[
           breadcrumbSchema([
