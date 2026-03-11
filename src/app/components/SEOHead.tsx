@@ -54,7 +54,10 @@ export function SEOHead({
       "og:site_name": "YP Club",
     };
     if (canonical) ogTags["og:url"] = canonical;
-    if (ogImage) ogTags["og:image"] = ogImage;
+    const resolvedOgImage = ogImage || "https://chinubntr.github.io/yp-club-website/og-image.jpg";
+    ogTags["og:image"] = resolvedOgImage;
+    ogTags["og:image:width"] = "1200";
+    ogTags["og:image:height"] = "630";
 
     Object.entries(ogTags).forEach(([property, content]) => {
       let el = document.querySelector(`meta[property="${property}"]`);
@@ -72,7 +75,7 @@ export function SEOHead({
       "twitter:title": title,
       "twitter:description": description,
     };
-    if (ogImage) twitterTags["twitter:image"] = ogImage;
+    twitterTags["twitter:image"] = resolvedOgImage;
 
     Object.entries(twitterTags).forEach(([name, content]) => {
       let el = document.querySelector(`meta[name="${name}"]`);
