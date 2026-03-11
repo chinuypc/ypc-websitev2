@@ -121,7 +121,7 @@ export function PlatformSection() {
 
               {/* Phone mockup with real images */}
               <div className="hidden lg:flex w-[340px] shrink-0 items-center justify-center">
-                <div className="relative w-[280px] h-[600px] rounded-[32px] overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#1a1414]">
+                <div className="relative w-[280px] h-[600px] rounded-[8px] overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#1a1414]">
                   {features.map((feature, i) => (
                     <img
                       key={i}

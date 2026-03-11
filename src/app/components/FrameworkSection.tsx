@@ -17,14 +17,14 @@ const pillars = [
     title: "Knowledge",
     desc: "Access the tools, frameworks, and subject matter experts that move you from operator to global executive. Programming designed to sharpen the person running the company.",
     image: knowledgeImg,
-    imageAlt: "YP Club member at a curated dinner event",
+    imageAlt: "YP Club founder panel discussion on stage",
   },
   {
     num: "03",
     title: "Wealth",
     desc: "The relationships, deals, and infrastructure to raise capital, build generational wealth, and protect what you are building as it scales.",
     image: wealthImg,
-    imageAlt: "YP Club founders networking at a curated dinner",
+    imageAlt: "YP Club branded card at a luxury dinner venue",
   },
 ];
 
