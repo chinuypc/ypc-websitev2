@@ -357,6 +357,30 @@ export default function WaitlistPage() {
       />
       </main>
       <PageFooter />
+
+      {/* Floating app store icons - mobile only */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 md:hidden">
+        <a
+          href="#"
+          className="size-[48px] rounded-full bg-[rgba(26,20,20,0.75)] border border-[rgba(160,133,103,0.3)] flex items-center justify-center backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:bg-[rgba(26,20,20,0.9)] hover:border-[rgba(160,133,103,0.5)] transition-colors"
+          style={{ WebkitBackdropFilter: "blur(20px) saturate(180%)", backdropFilter: "blur(20px) saturate(180%)" }}
+          aria-label="Download on the App Store"
+        >
+          <svg className="size-[22px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d={svgPaths.p2d7ae380} fill="#FCFCFC" />
+          </svg>
+        </a>
+        <a
+          href="#"
+          className="size-[48px] rounded-full bg-[rgba(26,20,20,0.75)] border border-[rgba(160,133,103,0.3)] flex items-center justify-center backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:bg-[rgba(26,20,20,0.9)] hover:border-[rgba(160,133,103,0.5)] transition-colors"
+          style={{ WebkitBackdropFilter: "blur(20px) saturate(180%)", backdropFilter: "blur(20px) saturate(180%)" }}
+          aria-label="Get it on Google Play"
+        >
+          <svg className="size-[22px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d={svgPaths.p3d619b80} fill="#FCFCFC" />
+          </svg>
+        </a>
+      </div>
     </div>
   );
 }

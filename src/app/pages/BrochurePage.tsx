@@ -252,8 +252,8 @@ export default function BrochurePage() {
                       >
                         WhatsApp Number
                       </label>
-                      <div className="flex">
-                        <div className="h-[45.5px] bg-[rgba(252,252,252,0.03)] border border-[rgba(129,106,84,0.4)] border-r-0 rounded-l-[2px] flex items-center gap-2 px-4 shrink-0">
+                      <div className="flex w-full min-w-0">
+                        <div className="h-[45.5px] bg-[rgba(252,252,252,0.03)] border border-[rgba(129,106,84,0.4)] border-r-0 rounded-l-[2px] flex items-center gap-1.5 px-3 shrink-0">
                           <span className="text-[13px]" aria-hidden="true">{"\uD83C\uDDE6\uD83C\uDDEA"}</span>
                           <span className="font-['Inter',sans-serif] font-light text-[13px] text-[#8d8d8d]">
                             +971
@@ -269,11 +269,11 @@ export default function BrochurePage() {
                           }
                           aria-invalid={!!errors.whatsapp}
                           aria-describedby={errors.whatsapp ? whatsappErrorId : undefined}
-                          className={`flex-1 h-[45.5px] bg-[rgba(252,252,252,0.03)] rounded-r-[2px] border ${
+                          className={`min-w-0 flex-1 h-[45.5px] bg-[rgba(252,252,252,0.03)] rounded-r-[2px] border ${
                             errors.whatsapp
                               ? "border-[#F87171]"
                               : "border-[rgba(129,106,84,0.4)]"
-                          } border-l-0 px-4 font-['Inter',sans-serif] font-light text-[13px] text-[#fcfcfc] placeholder:text-[rgba(252,252,252,0.35)] outline-none focus-visible:border-[#A08567] focus-visible:ring-1 focus-visible:ring-[#A08567] transition-colors`}
+                          } border-l-0 px-3 font-['Inter',sans-serif] font-light text-[13px] text-[#fcfcfc] placeholder:text-[rgba(252,252,252,0.35)] outline-none focus-visible:border-[#A08567] focus-visible:ring-1 focus-visible:ring-[#A08567] transition-colors`}
                         />
                       </div>
                       {errors.whatsapp && (

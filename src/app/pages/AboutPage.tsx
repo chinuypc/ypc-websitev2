@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import { ScrollReveal } from "../components/ScrollReveal";
-import { PageFooter, QuoteSection } from "../components/PageLayout";
-import svgPaths from "../../imports/svg-l31yrew5ki";
+import { SubPageNav, PageFooter, QuoteSection } from "../components/PageLayout";
 import {
   SEOHead,
   breadcrumbSchema,
@@ -27,48 +26,7 @@ export default function AboutPage() {
           ]),
         ]}
       />
-      {/* Nav */}
-      <header>
-      <nav
-        className="sticky top-0 z-50 h-[86px] flex items-center justify-between px-6 md:px-16 border-b border-[rgba(255,255,255,0.1)] bg-[rgba(26,20,20,0.25)] backdrop-blur-3xl"
-        style={{ WebkitBackdropFilter: "blur(40px) saturate(200%)", backdropFilter: "blur(40px) saturate(200%)" }}
-        aria-label="About page navigation"
-      >
-        <Link to="/" className="block hover:opacity-80 transition-opacity outline-none focus-visible:ring-1 focus-visible:ring-[#A08567] rounded-sm" aria-label="YP Club, back to homepage">
-          <div className="relative h-[14px] w-[94px] md:h-[18px] md:w-[120px]">
-            <svg
-              className="absolute block size-full"
-              fill="none"
-              preserveAspectRatio="xMinYMid meet"
-              viewBox="0 0 282.478 43.3486"
-              aria-hidden="true"
-            >
-              <g clipPath="url(#clip_logo_about)">
-                <path d={svgPaths.p131e0300} fill="#FCFCFC" />
-                <path d={svgPaths.p2c90b270} fill="#FCFCFC" />
-                <path d={svgPaths.p2ec72600} fill="#FCFCFC" />
-                <path d={svgPaths.p32d0f280} fill="#FCFCFC" />
-                <path d={svgPaths.p18dfb400} fill="#FCFCFC" />
-                <path d={svgPaths.p3f61680} fill="#FCFCFC" />
-              </g>
-              <defs>
-                <clipPath id="clip_logo_about">
-                  <rect fill="#FCFCFC" height="43.3486" width="282.478" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </Link>
-        <Link
-          to="/waitlist"
-          className="h-[37px] px-6 border border-[rgba(255,255,255,0.15)] flex items-center justify-center hover:border-[rgba(255,255,255,0.4)] transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[#A08567] rounded-sm"
-        >
-          <span className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] tracking-[1.65px] uppercase text-[#8d8d8d]">
-            Join the Waitlist
-          </span>
-        </Link>
-      </nav>
-      </header>
+      <SubPageNav />
 
       <main id="main-content">
       {/* Hero */}
