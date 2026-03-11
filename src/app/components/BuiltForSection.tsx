@@ -49,7 +49,7 @@ export function BuiltForSection() {
             </div>
           </ScrollReveal>
           <ScrollReveal direction="none" delay={0.2}>
-            <div className="w-12 h-px bg-[#816a54] mx-auto lg:mx-0 mb-8" aria-hidden="true" />
+            <div className="w-12 h-px gold-shimmer mx-auto lg:mx-0 mb-8" aria-hidden="true" />
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.25}>
             <div className="max-w-[560px] mx-auto lg:mx-0 space-y-6 mb-12">

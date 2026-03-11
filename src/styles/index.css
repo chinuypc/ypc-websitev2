@@ -10,3 +10,34 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Smooth page-level scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global link/button interaction polish */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle gold shimmer for decorative lines */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(129,106,84,0.15) 0%,
+    rgba(160,133,103,0.4) 50%,
+    rgba(129,106,84,0.15) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Image reveal on load */
+img {
+  transition: opacity 0.4s ease;
+}
