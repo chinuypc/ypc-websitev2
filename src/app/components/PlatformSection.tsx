@@ -105,7 +105,7 @@ export function PlatformSection() {
     >
       <div className="sticky top-0 h-screen overflow-hidden flex items-center">
         <section className="w-full px-6" aria-labelledby="platform-heading">
-          <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row lg:items-center lg:gap-10">
+          <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row lg:items-center lg:gap-6">
             {/* Left column: header + feature list */}
             <div className="flex-1 min-w-0">
               <p className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] tracking-[3px] uppercase text-[#A08567] mb-3">
@@ -158,7 +158,7 @@ export function PlatformSection() {
             </div>
 
             {/* Right column: image showcase - desktop only */}
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="hidden lg:flex flex-1 items-center justify-center">
               <ImageShowcase activeIndex={activeIndex} />
             </div>
           </div>
