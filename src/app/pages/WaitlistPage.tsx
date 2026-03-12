@@ -275,7 +275,7 @@ export default function WaitlistPage() {
                 {/* Notice */}
                 <div className="bg-[rgba(129,106,84,0.08)] border border-[rgba(129,106,84,0.25)] p-4 flex gap-3 items-start mb-8">
                   <div className="size-[6px] rounded-[3px] bg-[#816a54] mt-1.5 shrink-0" />
-                  <p className="font-['Cormorant_Garamond',serif] italic text-[13px] leading-[19.5px] text-[#A08567]">
+                  <p className="font-['Cormorant_Garamond',serif] italic text-[16px] leading-[24px] text-[#A08567]">
                     Membership is selective. Standards exist to protect the room.
                   </p>
                 </div>
