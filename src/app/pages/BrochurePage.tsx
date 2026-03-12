@@ -223,9 +223,9 @@ export default function BrochurePage() {
               <div className="p-8 md:p-10">
                 {submitted ? (
                   <ThankYouState
-                    title="Brochure Sent."
-                    subtitle="Check your inbox."
-                    message="We've sent the YP Club playbook to your email. A member of our team will be in contact soon."
+                    title="Request Received."
+                    subtitle="We'll be in touch shortly."
+                    message="A member of our team will reach out to you shortly."
                   />
                 ) : (
                   <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
