@@ -19,6 +19,8 @@ import {
 import type { CountryCode } from "../components/CountryCodeSelector";
 import { SEOHead, breadcrumbSchema } from "../components/SEOHead";
 import heroImg from "../../assets/brochure-hero.jpg";
+import mohammedImg from "figma:asset/ae0160cad15f9df559111aed78b7c60094189bef.png";
+import jamesImg from "figma:asset/9bec4d7607c12288eb9817dbf3ea7182276b1e03.png";
 
 import speakersImg from "../../assets/brochure-speakers.jpg";
 
@@ -48,6 +50,7 @@ const testimonials = [
       "\u201CMohammed built the region\u2019s first a16z-backed company at this stage. He did it as a YP Club member.\u201D",
     name: "Mohamed Mohamed",
     company: "Smart Bricks",
+    avatar: mohammedImg,
   },
   {
     tag: "Multi-six-figure contract",
@@ -55,6 +58,7 @@ const testimonials = [
       "\u201CJames went from YP Club team member to founder. His first contract came through the network he helped build.\u201D",
     name: "James Augustin",
     company: "Particle Execution",
+    avatar: jamesImg,
   },
 ];
 
@@ -411,15 +415,29 @@ export default function BrochurePage() {
                         {t.tag}
                       </span>
                     </div>
-                    <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] mb-3">
+                    <p className="font-['Inter',sans-serif] font-light text-[14px] leading-[24px] text-[#fcfcfc] mb-4">
                       {t.quote}
                     </p>
-                    <p className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] text-[#fcfcfc]">
-                      {t.name}
-                    </p>
-                    <p className="font-['Inter',sans-serif] font-light text-[12px] leading-[18px] tracking-[0.9px] uppercase text-[#878787]">
-                      {t.company}
-                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="relative rounded-full size-[40px] shrink-0">
+                        <div className="absolute inset-0 rounded-full bg-[#2c2018]" />
+                        <img
+                          src={t.avatar}
+                          alt={`${t.name}, YP Club member`}
+                          className="absolute inset-0 size-full rounded-full object-cover"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 rounded-full border border-[rgba(200,185,154,0.25)]" />
+                      </div>
+                      <div>
+                        <p className="font-['Inter',sans-serif] font-medium text-[12px] leading-[18px] text-[#fcfcfc]">
+                          {t.name}
+                        </p>
+                        <p className="font-['Inter',sans-serif] font-light text-[12px] leading-[18px] tracking-[0.9px] uppercase text-[#878787]">
+                          {t.company}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
