@@ -17,7 +17,7 @@ function figmaAssetResolver(): Plugin {
 }
 
 export default defineConfig({
-  base: '/yp-club-website/',
+  base: '/ypc-websitev2/',
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if
