@@ -1,4 +1,6 @@
 import { useState, useId } from "react";
+import { useSearchParams } from "react-router";
+import emailjs from "@emailjs/browser";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "../components/ScrollReveal";
 import {
   SubPageNav,
@@ -100,6 +102,8 @@ function validateForm(data: FormData, countryDial: string): FormErrors {
 export default function BrochurePage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [queryParameters] = useSearchParams();
   const [form, setForm] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -115,16 +119,46 @@ export default function BrochurePage() {
   const whatsappId = useId();
   const whatsappErrorId = `${whatsappId}-error`;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validateForm(form, selectedCountry.dial);
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setApiError(null);
+    try {
+      await emailjs.send(
+        "service_3ujvr9j",
+        "template_4d2o9d3",
+        {
+          subject: "Download Brochure Request",
+          to_email: "info@ypclub.com",
+          full_name: `${form.firstName} ${form.lastName}`,
+          first_name: form.firstName,
+          last_name: form.lastName,
+          email: form.email,
+          phone: `+${selectedCountry.dial}${form.whatsapp}`,
+          linkedin: form.linkedin,
+          marketing_consent: form.acceptContact ? "Yes" : "No",
+          referred_by: queryParameters.get("referredBy") || "—",
+          submitted_at: new Date().toLocaleString("en-GB", {
+            timeZone: "Asia/Dubai",
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        },
+        "_hHSM4NQC_DB-_5SV"
+      );
       setSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setApiError("Failed to send your request. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const updateField = (key: keyof FormData, value: string | boolean) => {
@@ -328,6 +362,12 @@ export default function BrochurePage() {
                       label="I'm happy for YP Club to contact me about membership. I understand this is a one-to-one conversation, not a mailing list."
                       error={errors.acceptContact}
                     />
+
+                    {apiError && (
+                      <p className="font-['Inter',sans-serif] font-light text-[12px] text-[#F87171]">
+                        {apiError}
+                      </p>
+                    )}
 
                     <SubmitButton
                       label="Send Me the Brochure"
