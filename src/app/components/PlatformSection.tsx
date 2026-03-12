@@ -31,6 +31,26 @@ const features = [
   },
 ];
 
+function ImageShowcase({ activeIndex }: { activeIndex: number }) {
+  return (
+    <div
+      className="relative shrink-0"
+      style={{ width: "min(280px, 28vh)", aspectRatio: "1135/2099" }}
+    >
+      {features.map((feature, i) => (
+        <img
+          key={feature.title}
+          src={feature.image}
+          alt={`${feature.title} screen`}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+          style={{ opacity: activeIndex === i ? 1 : 0 }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function PlatformSection() {
   const outerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,11 +60,9 @@ export function PlatformSection() {
   const tapTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleTap = useCallback((index: number) => {
-    // Only on mobile (< lg where scroll-driven switching is the UX)
     if (window.innerWidth >= 1024) return;
     tappedRef.current = index;
     setActiveIndex(index);
-    // Resume scroll-driven switching after 3s of no taps
     clearTimeout(tapTimeoutRef.current);
     tapTimeoutRef.current = setTimeout(() => {
       tappedRef.current = null;
@@ -52,7 +70,6 @@ export function PlatformSection() {
   }, []);
 
   const handleScroll = useCallback(() => {
-    // Skip scroll-driven updates while a tap is active
     if (tappedRef.current !== null) return;
     if (!outerRef.current) return;
     const rect = outerRef.current.getBoundingClientRect();
@@ -117,16 +134,16 @@ export function PlatformSection() {
                   style={{
                     borderColor:
                       activeIndex === i
-                        ? "#A08567"
+                        ? feature.color
                         : "rgba(255,255,255,0.08)",
-                    opacity: activeIndex === i ? 1 : 0.3,
+                    opacity: activeIndex === i ? 1 : 0.35,
                   }}
                 >
                   <p className="font-['Inter',sans-serif] font-semibold text-[13px] leading-[18px] tracking-[2px] uppercase text-[#fcfcfc] mb-1">
                     {feature.title}
                   </p>
                   <p
-                    className="font-['Inter',sans-serif] font-light text-[14px] md:text-[15px] leading-[24px] text-[#d4d4d4] max-w-[460px] overflow-hidden transition-all duration-500"
+                    className="font-['Inter',sans-serif] font-light text-[14px] md:text-[15px] leading-[24px] text-[#d4d4d4] max-w-[460px] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
                     style={{
                       maxHeight: activeIndex === i ? "120px" : "0px",
                       opacity: activeIndex === i ? 1 : 0,
@@ -137,21 +154,12 @@ export function PlatformSection() {
                   </p>
                 </div>
               ))}
+
             </div>
 
-            {/* Right column: Phone mockup aligned with content */}
-            <div className="hidden lg:flex w-[300px] shrink-0 items-center justify-center">
-              <div className="relative w-full max-h-[70vh] rounded-[8px] overflow-hidden">
-                {features.map((feature, i) => (
-                  <img
-                    key={feature.title}
-                    src={feature.image}
-                    alt={`${feature.title} screen`}
-                    className={`w-full h-auto rounded-[8px] transition-opacity duration-700 ease-in-out ${i === 0 ? "relative" : "absolute inset-0"}`}
-                    style={{ opacity: activeIndex === i ? 1 : 0 }}
-                  />
-                ))}
-              </div>
+            {/* Right column: image showcase - desktop only */}
+            <div className="hidden lg:flex items-center justify-center">
+              <ImageShowcase activeIndex={activeIndex} />
             </div>
           </div>
         </section>
