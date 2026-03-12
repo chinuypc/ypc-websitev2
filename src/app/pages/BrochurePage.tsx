@@ -225,7 +225,7 @@ export default function BrochurePage() {
                   <ThankYouState
                     title="Brochure Sent."
                     subtitle="Check your inbox."
-                    message="We've sent the YP Club playbook to your email. A member of our team will reach out on WhatsApp within 24 hours."
+                    message="We've sent the YP Club playbook to your email. A member of our team will be in contact soon."
                   />
                 ) : (
                   <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
